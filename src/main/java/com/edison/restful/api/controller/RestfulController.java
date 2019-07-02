@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.eclipse.jetty.client.HttpRequest;
 import org.eclipse.jetty.http.HttpFields;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,26 +33,26 @@ public class RestfulController {
 
   @ApiOperation(value = "接受普通GET请求(无任何限制),返回值为String类型，返回值内容与传入一致")
   @RequestMapping(value = "/get", method = RequestMethod.GET)
-  public String testForGet(@RequestParam String content) {
+  public String testForGet(@RequestParam String content, HttpServletRequest request) {
     return content;
   }
 
   @ApiOperation(value = "接受普通POST请求(无任何限制),返回值为String类型，返回值内容与传入一致")
   @RequestMapping(value = "/post", method = RequestMethod.POST)
-  public String testForPost(@RequestBody String content) {
+  public String testForPost(@RequestBody String content, HttpRequest request) {
     return content;
   }
 
   @ApiOperation(value = "接受普通PUT请求(无任何限制),返回值为String类型，返回值内容与传入一致")
   @RequestMapping(value = "/put", method = RequestMethod.PUT)
-  public String testForPut(@RequestBody String content) {
+  public String testForPut(@RequestBody String content, HttpRequest request) {
     return content;
   }
 
   @ApiOperation(value = "接受普通路径中的携带参数(2)(无任何限制),返回值为String类型，返回值内容是传入参数的List")
   @RequestMapping(value = "/path/{params1}/{params2}", method = RequestMethod.GET)
   public List<String> testForPath(@PathVariable(value = "params1") String params1,
-      @PathVariable(value = "params2") String params2) {
+      @PathVariable(value = "params2") String params2, HttpRequest request) {
     List<String> objects = Lists.newArrayList();
     objects.add(params1);
     objects.add(params2);
@@ -60,7 +61,7 @@ public class RestfulController {
 
   @ApiOperation(value = "接受普通路径中的携带fgf参数(1)(无任何限制),返回值为String类型，返回值内容是传入参数的List")
   @RequestMapping(value = "/path/{params1}}", method = RequestMethod.GET)
-  public String testForPath1(@PathVariable(value = "params1") String params1) {
+  public String testForPath1(@PathVariable(value = "params1") String params1, HttpRequest request) {
     return params1;
   }
 

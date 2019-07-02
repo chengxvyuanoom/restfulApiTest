@@ -125,22 +125,6 @@
             <AppenderRef ref="WarnFileAppender"/>
             <AppenderRef ref="ErrorFileAppender"/>
         </Root>
-
-        <Logger name="org.springframework" level="info" additivity="false">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="DebugFileAppender"/>
-            <AppenderRef ref="InfoFileAppender"/>
-            <AppenderRef ref="WarnFileAppender"/>
-            <AppenderRef ref="ErrorFileAppender"/>
-        </Logger>
-
-        <Logger name="springfox.documentation" level="info" additivity="false">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="DebugFileAppender"/>
-            <AppenderRef ref="InfoFileAppender"/>
-            <AppenderRef ref="WarnFileAppender"/>
-            <AppenderRef ref="ErrorFileAppender"/>
-        </Logger>
     </Loggers>
 
 </Configuration>
