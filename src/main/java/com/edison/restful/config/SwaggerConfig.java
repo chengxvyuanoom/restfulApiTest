@@ -23,7 +23,7 @@ public class SwaggerConfig {
     /**
      * Swagger Title
      */
-    private static final String SWAGGER_TITLE = "Datapipeline-Api_Test";
+    private static final String SWAGGER_TITLE = "Datapipeline-Api-Test";
     /**
      * Swagger Description
      */
